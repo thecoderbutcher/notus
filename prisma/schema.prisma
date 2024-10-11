@@ -32,6 +32,7 @@ enum Day {
 
 enum UserRole {
   ADMIN
+  USER
   TEACHER
   STUDENT
   PARENT
