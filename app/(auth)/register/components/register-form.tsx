@@ -25,6 +25,7 @@ const RegisterForm = () => {
       email: '',
       password: '',
       name: '',
+      lastname:''
     },
   });
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {

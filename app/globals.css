@@ -22,4 +22,39 @@
 
   --color-accent: #536dfe;
   --color-border: #757575;
+  
+  --color-success: #10b981;
+  --color-warning: #ffbb55;
+  --color-danger: #ef4444;
+}
+
+/* body {
+  @apply bg-base-background text-text dark:bg-base-background-dark dark:text-text-dark;
+} */
+
+input {
+  @apply w-full border border-border h-10 px-4 rounded-md text-sm focus:border-border outline-none focus:outline-none border-none;
+}
+
+/* Chrome, Safari, Edge */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+button {
+  @apply cursor-pointer;
 }

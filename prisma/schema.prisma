@@ -51,7 +51,7 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
-  birthday      DateTime
+  birthday      DateTime?
   role          UserRole  @default(USER)
 
   person   Person?
