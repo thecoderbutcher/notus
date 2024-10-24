@@ -1,11 +1,9 @@
-import CreateForm from "./components/CreateForm";
+import React from 'react'
 
 const page = () => {
   return (
-    <div className="flex flex-col w-full justify-center items-center px-2">
-      <CreateForm />
-    </div>
+    <div>page</div>
   )
-};
+}
 
-export default page;
+export default page
