@@ -10,7 +10,7 @@ export default function DasboardLayout({
   return (
     <main className="h-screen flex">
       {/* left */}
-      <div className="w-[14%] md:w-[8%] lg:w-[14%] bg-white shadow-xl shadow-shadow rounded-r-2xl text-content/70">
+      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] bg-baseBackground dark:bg-baseBackgroundDark shadow-xl shadow-shadow rounded-r-2xl text-content/70">
         <Link
           href="/"
           className="flex items-center justify-center lg:justify-start p-4 gap-2"
@@ -27,7 +27,7 @@ export default function DasboardLayout({
         <Menu />
       </div>
       {/* right */}
-      <div className="w-[86%] md:w-[92%] lg:w-[86%] overflow-scroll px-2 flex flex-col">
+      <div className="w-[86%] md:w-[92%] lg:w-[86%] bg-baseSurface/50 dark:bg-baseSurfaceDark/50 overflow-scroll px-2 flex flex-col">
         <Navbar />
         {children}
       </div>

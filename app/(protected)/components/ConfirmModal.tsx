@@ -13,14 +13,14 @@ const ConfirmModal = ({
   onCancel,
 }: ConfirmModalProps) => {
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
-      <div className="bg-white rounded-xl p-6 w-[90%] max-w-md shadow-lg text-center space-y-4">
+    <div className="fixed inset-0 z-50  flex items-center justify-center">
+      <div className="rounded-xl p-6 w-[90%] max-w-md shadow-lg text-center space-y-4">
         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
-        <p className="text-gray-600">{message}</p>
+        <p className="">{message}</p>
         <div className="flex justify-center gap-4 pt-4">
           <button
             onClick={onCancel}
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-200 text-gray-800 font-semibold rounded-lg"
+            className="px-4 py-2 font-semibold rounded-lg"
           >
             Cancelar
           </button>

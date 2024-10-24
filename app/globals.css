@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-primary: #1976d2;
@@ -6,31 +7,31 @@
   --color-primary-soft: #bbdefb;
   --color-primary-dark: #2196f3;
 
-  --color-neutral-light: #bdbdbd;
-  --color-neutral-darkest: #212121;
-  --color-neutral-dark: #757575;
+  --color-neutralLight: #bdbdbd;
+  --color-neutralDarkest: #212121;
+  --color-neutralDark: #757575;
 
-  --color-base-background: #ffffff;
-  --color-base-surface: #f5f5f5;
-  --color-base-background-dark: #212121;
-  --color-base-surface-dark: #424242;
+  --color-baseBackground: #ffffff;
+  --color-baseSurface: #f5f5f5;
+  --color-baseBackgroundDark: #212121;
+  --color-baseSurfaceDark: #424242;
 
   --color-text: #212121;
-  --color-text-muted: #757575;
-  --color-text-dark: #ffffff;
-  --color-text-muted-dark: #bdbdbd;
+  --color-textMuted: #757575;
+  --color-textDark: #ffffff;
+  --color-textMutedDark: #bdbdbd;
 
   --color-accent: #536dfe;
   --color-border: #757575;
-  
+
   --color-success: #10b981;
   --color-warning: #ffbb55;
   --color-danger: #ef4444;
 }
 
-/* body {
-  @apply bg-base-background text-text dark:bg-base-background-dark dark:text-text-dark;
-} */
+body {
+  @apply bg-baseBackground text-text dark:bg-baseBackgroundDark dark:text-textDark;
+}
 
 input {
   @apply w-full border border-border h-10 px-4 rounded-md text-sm focus:border-border outline-none focus:outline-none border-none;

@@ -18,7 +18,7 @@ const FormGroup = ({
         <label htmlFor={labelFor} className="text-base font-semibold">
           {labelText}
         </label>
-        <div className="flex px-2 items-center bg-darkText text-text/90 shadow-md border border-secondary/10 rounded-md">
+        <div className="flex px-2 items-center shadow-md border rounded-md">
           <Icon className="text-secondary/50" />
           {children}
         </div>
