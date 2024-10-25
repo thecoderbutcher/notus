@@ -1,8 +1,11 @@
 import React from 'react'
+import CreateUserForm from '../../user/create/components/CreateUserForm'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <CreateUserForm/>
+    </div>
   )
 }
 

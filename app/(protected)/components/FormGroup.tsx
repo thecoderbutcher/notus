@@ -13,7 +13,7 @@ const FormGroup = ({
   errorMessage,
 }: FormGroupProps) => {
   return (
-    <div className="flex flex-col gap-1  ">
+    <div className="flex flex-col gap-1">
       <div className="flex flex-col w-full gap-1 px-2 py-1 ">
         <label htmlFor={labelFor} className="text-base font-semibold">
           {labelText}

@@ -51,7 +51,6 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
-  birthday      DateTime?
   role          UserRole  @default(USER)
 
   person   Person?
@@ -144,10 +143,11 @@ model Address {
 }
 
 model Person {
-  id        String  @id @default(uuid())
+  id        String    @id @default(uuid())
+  birthday  DateTime?
   bloodType String?
   gender    Gender
-  address   Address @relation(fields: [addressId], references: [id])
+  address   Address   @relation(fields: [addressId], references: [id])
   addressId String
 
   userId String @unique
