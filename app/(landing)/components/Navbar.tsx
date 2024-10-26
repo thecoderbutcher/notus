@@ -1,15 +1,52 @@
-'use client'
-import { useState } from 'react';
+'use client';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
+  const links = [
+    { text: 'Inicio', url: '/' },
+    { text: 'Sección', url: '/' },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsSticky(scrollTop > 100); // cuando baja más de 100px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="flex w-full bg-blue-600 text-white relative z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Mi Sitio</h1> 
+    <div className={`${isSticky ? 'fixed top-0 left-0 w-full z-50 shadow-lg' : 'relative'}  bg-baseSurface text-neutralDarkest transition-all duration-300`}>
+      <div className="flex justify-between items-center container mx-auto py-4 px-4 lg:px-0">
+        <div className="flex gap-1 items-center">
+          <Image
+            src={'/icons/notus-logo.webp'}
+            alt="Notus logo"
+            width={40}
+            height={40}
+          />
+          <h1 className="text-xl font-bold">Notus</h1>
+        </div>
+
+        {/* Menú desktop */}
+        <nav className="hidden md:flex space-x-6">
+          {links.map(link => (
+            <a key={link.text} href={link.url}>
+              {link.text}
+            </a>
+          ))}
+        </nav>
+
+        {/* Menú mobile toggle */}
         <button
           className="md:hidden text-2xl"
           onClick={toggleMenu}
@@ -17,25 +54,22 @@ const Navbar = () => {
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-
-        {/* Menú desktop */}
-        <nav className="hidden md:flex space-x-6">
-          <a href="#" className="hover:underline">Inicio</a>
-          <a href="#" className="hover:underline">Servicios</a>
-          <a href="#" className="hover:underline">Contacto</a>
-        </nav>
       </div>
+
+      {/* Menú móvil */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-blue-700 md:hidden shadow-md">
+        <div className="md:hidden bg-blue-700 shadow-md">
           <nav className="flex flex-col space-y-2 p-4">
-            <a href="#" className="hover:underline">Inicio</a>
-            <a href="#" className="hover:underline">Servicios</a>
-            <a href="#" className="hover:underline">Contacto</a>
+            {links.map(link => (
+              <a key={link.text} href={link.url}>
+                {link.text}
+              </a>
+            ))}
           </nav>
         </div>
       )}
-    </header>
+    </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

@@ -14,7 +14,7 @@ const Header = () => {
     { icon: <FaPhoneAlt />, title: 'Phone', text: '+5492665035694' },
   ];
   return (
-    <div className="flex flex-col w-full">
+    <header className="flex flex-col w-full text-textDark/70">
       <div className="hidden lg:flex">
         <div className="flex gap-2 items-center justify-end bg-accent py-4 px-4 w-1/3">
           <h2 className='font-semibold text-lg'>Siguenos:</h2>
@@ -38,7 +38,7 @@ const Header = () => {
         </div>
       </div>
       <Navbar />
-    </div>
+    </header>
   );
 };
 
