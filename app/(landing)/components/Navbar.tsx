@@ -25,7 +25,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`${isSticky ? 'fixed top-0 left-0 w-full z-50 shadow-lg' : 'relative'}  bg-baseSurface text-neutralDarkest transition-all duration-300`}>
+    <div className={`${isSticky ? 'fixed top-0 left-0 w-full z-50 shadow-lg' : 'relative'}  bg-baseSurface text-neutralDarkest transition-all duration-200`}>
       <div className="flex justify-between items-center container mx-auto py-4 px-4 lg:px-0">
         <div className="flex gap-1 items-center">
           <Image

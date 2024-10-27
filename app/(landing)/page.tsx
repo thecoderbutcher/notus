@@ -1,10 +1,15 @@
-export default function Home() {
+import Benefits from "./components/Benefits"
+import Hero from "./components/Hero"
+
+
+const page = () => {
   return (
-    <div className="flex flex-col items-center justify-items-center">
-      <main className="h-screen">Init Application</main>
-      <section className="h-screen">otra</section>
-      <section className="h-screen">otra</section>
-      <section className="h-screen">otra</section>
-    </div>
-  );
+    <main>
+      <Hero />
+      <Benefits />
+      caca
+    </main>
+  )
 }
+
+export default page

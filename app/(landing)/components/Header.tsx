@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className="flex flex-col w-full text-textDark/70">
       <div className="hidden lg:flex">
-        <div className="flex gap-2 items-center justify-end bg-accent py-4 px-4 w-1/3">
+        <div className="flex gap-2 items-center justify-end bg-accent py-2 px-4 w-1/3">
           <h2 className='font-semibold text-lg'>Siguenos:</h2>
           <ul className="flex gap-2">
             {socialLinks.map(social => (
