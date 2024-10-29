@@ -30,7 +30,7 @@
 }
 
 body {
-  @apply bg-baseBackground text-text dark:bg-baseBackgroundDark dark:text-textDark;
+  @apply bg-baseSurface text-text dark:bg-baseBackgroundDark dark:text-textDark;
 }
 
 input {

@@ -1,13 +1,14 @@
+import AboutUs from "./components/AboutUs"
 import Benefits from "./components/Benefits"
 import Hero from "./components/Hero"
 
 
 const page = () => {
   return (
-    <main>
+    <main className="flex flex-col justify-center items-center">
       <Hero />
       <Benefits />
-      caca
+      <AboutUs />
     </main>
   )
 }

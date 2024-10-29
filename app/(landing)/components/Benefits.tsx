@@ -29,7 +29,7 @@ const Benefits = () => {
     },
   ];
   return (
-    <div className="flex flex-col h-full px-4 gap-4 mx-auto justify-center items-center w-full lg:flex-row xl:justify-end relative -top-15">
+    <div className="flex flex-col h-full px-4 gap-4 mx-auto justify-center items-center w-full lg:flex-row xl:justify-end relative -top-20">
       {benefits.map(benefit => (
         <div
           key={benefit.id}
