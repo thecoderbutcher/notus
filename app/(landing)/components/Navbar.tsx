@@ -7,6 +7,7 @@ const Navbar = () => {
   const links = [
     { text: 'Inicio', url: '/' },
     { text: 'Sección', url: '/' },
+    { text: 'Login', url: '/login' },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`${isSticky ? 'fixed top-0 left-0 w-full z-50 shadow-lg' : 'relative'}  bg-baseSurface text-neutralDarkest transition-all duration-200`}>
+    <div
+      className={`${isSticky ? 'fixed top-0 left-0 w-full z-50 shadow-lg' : 'relative'}  bg-baseSurface text-neutralDarkest transition-all duration-200`}
+    >
       <div className="flex justify-between items-center container mx-auto py-4 px-4 lg:px-0">
         <div className="flex gap-1 items-center">
           <Image

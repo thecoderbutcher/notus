@@ -53,7 +53,20 @@ model User {
   password      String?
   role          UserRole  @default(USER)
 
-  person   Person?
+  birthday  DateTime?
+  bloodType String?
+  gender    Gender?
+
+  addressId Int?
+  address   Address?   @relation(fields: [addressId], references: [id])
+
+  student Student?
+  teacher Teacher?
+  parent  Parent?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
   accounts Account[]
 }
 
@@ -98,7 +111,7 @@ model PasswordResetToken {
  * GENERAL
  */
 model Country {
-  id   String @id @default(uuid())
+  id   Int    @id @default(autoincrement())
   name String
   code String
 
@@ -106,23 +119,23 @@ model Country {
 }
 
 model Province {
-  id   String @id @default(uuid())
+  id   Int    @id @default(autoincrement())
   name String
   code String
 
   country   Country @relation(fields: [countryId], references: [id])
-  countryId String
+  countryId Int
 
   cities City[]
 }
 
 model City {
-  id   String @id @default(uuid())
+  id   Int    @id @default(autoincrement())
   name String
   code String
 
   province   Province @relation(fields: [provinceId], references: [id])
-  provinceId String
+  provinceId Int
 
   address Address[]
 }
@@ -131,43 +144,24 @@ model City {
  * APP
  */
 model Address {
-  id          String @id @default(uuid())
+  id          Int    @id @default(autoincrement())
   street      String
   number      String
   description String
 
-  city   City   @relation(fields: [cityId], references: [id])
-  cityId String
+  city   City @relation(fields: [cityId], references: [id])
+  cityId Int
 
-  person Person[]
-}
-
-model Person {
-  id        String    @id @default(uuid())
-  birthday  DateTime?
-  bloodType String?
-  gender    Gender
-  address   Address   @relation(fields: [addressId], references: [id])
-  addressId String
-
-  userId String @unique
-  user   User   @relation(fields: [userId], references: [id])
-
-  student Student?
-  teacher Teacher?
-  parent  Parent?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  user User[]
 }
 
 model Student {
   id String @id @default(uuid())
 
-  personId String @unique
-  person   Person @relation(fields: [personId], references: [id])
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
 
-  parentId String
+  parentId Int
   parent   Parent @relation(fields: [parentId], references: [id])
 
   classId Int
@@ -181,10 +175,10 @@ model Student {
 }
 
 model Parent {
-  id String @id @default(uuid())
+  id Int @id @default(autoincrement())
 
-  personId String @unique
-  person   Person @relation(fields: [personId], references: [id])
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
 
   students Student[]
 }
@@ -192,8 +186,8 @@ model Parent {
 model Teacher {
   id String @id @default(uuid())
 
-  personId String @unique
-  person   Person @relation(fields: [personId], references: [id])
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
 
   subjects Subject[]
   lessons  Lesson[]

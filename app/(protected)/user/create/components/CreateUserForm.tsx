@@ -4,7 +4,7 @@ import { FaUser } from 'react-icons/fa6';
 
 const CreateUserForm = () => {
   return (
-    <form className="flex flex-col gap-2 justify-center items-center w-full">
+    <div className="flex flex-col gap-2 justify-center items-center w-full">
       <HeaderText title='Agregar profesor' tooltip='Se enviara un mail de confirmación al profesor agregado'/>
       <div className="w-full lg:w-2/3 xl:w-2/4">
         <p className="text-start w-full justify-start">Datos personlaes</p>
@@ -15,7 +15,7 @@ const CreateUserForm = () => {
           <input />
         </FormGroup>
       </div>
-    </form>
+    </div>
   );
 };
 

@@ -4,7 +4,6 @@ import {
   MdEvent,
   MdCoPresent,
   MdFamilyRestroom,
-  MdLogout,
   MdSettings,
   MdPerson,
   MdAppRegistration,
@@ -25,7 +24,7 @@ export const menuItems = [
       {
         icon: MdHome,
         label: 'Inicio',
-        href: '/',
+        href: '/dashboard',
         visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
@@ -121,12 +120,6 @@ export const menuItems = [
         icon: MdSettings,
         label: 'Settings',
         href: '/settings',
-        visible: ['admin', 'teacher', 'student', 'parent'],
-      },
-      {
-        icon: MdLogout,
-        label: 'Logout',
-        href: '/logout',
         visible: ['admin', 'teacher', 'student', 'parent'],
       },
     ],
