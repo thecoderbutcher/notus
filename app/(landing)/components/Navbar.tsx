@@ -58,7 +58,7 @@ const Navbar = () => {
 
       {/* Menú móvil */}
       {isOpen && (
-        <div className="md:hidden bg-blue-700 shadow-md">
+        <div className="md:hidden bg-baseSurface text-text text-xl uppercase text-center shadow-md">
           <nav className="flex flex-col space-y-2 p-4">
             {links.map(link => (
               <a key={link.text} href={link.url}>
