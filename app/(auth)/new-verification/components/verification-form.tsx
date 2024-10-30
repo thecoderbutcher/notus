@@ -1,5 +1,5 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import { newVerification } from '@/app/(auth)/new-verification/action/new-verification';
 import { BeatLoader } from 'react-spinners';
@@ -11,6 +11,7 @@ const VerificationForm = () => {
   const [success, setSuccess] = useState<string | undefined>('');
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
+  const router = useRouter();
 
   const onSubmit = useCallback(() => {
     if (success || error) return;
@@ -21,13 +22,19 @@ const VerificationForm = () => {
     }
     newVerification(token)
       .then(data => {
-        setSuccess(data?.success);
-        setError(data?.error);
+        if (data.error) {
+          setError(data?.error);
+        } else {
+          setSuccess(data?.success);
+          setTimeout(() => {
+            router.push(`/login`);
+          }, 1500);
+        }
       })
       .catch(() => {
         setError('Algo salió mal!');
       });
-  }, [token, success, error]);
+  }, [token, success, error, router]);
 
   useEffect(() => {
     onSubmit();

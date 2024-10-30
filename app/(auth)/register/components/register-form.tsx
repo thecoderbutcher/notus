@@ -6,17 +6,20 @@ import { AuthCardWrapper } from '@/app/(auth)/components/card-wrapper';
 import { FormError } from '@/app/(auth)/components/form-error';
 import { FormSuccess } from '@/app/(auth)/components/form-success';
 import { useState, useTransition } from 'react';
-import { register as registerAction } from '../action/register';
+import { registerUser } from '@/app/(auth)/register/action/register';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 
 const RegisterForm = () => {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | undefined>('');
   const [success, setSuccess] = useState<string | undefined>('');
+  const router = useRouter();
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<z.infer<typeof RegisterSchema>>({
@@ -25,7 +28,7 @@ const RegisterForm = () => {
       email: '',
       password: '',
       name: '',
-      lastname:''
+      lastname: '',
     },
   });
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
@@ -33,9 +36,16 @@ const RegisterForm = () => {
     setSuccess('');
 
     startTransition(() => {
-      registerAction(values).then(data => {
-        setError(data?.error);
-        setSuccess(data?.success);
+      registerUser(values).then(data => {
+        if (data.error) {
+          setError(data?.error);
+        } else {
+          setSuccess(data?.success);
+          setTimeout(() => {
+            router.push(`/login`);
+            reset();
+          }, 1500);
+        }
       });
     });
   };

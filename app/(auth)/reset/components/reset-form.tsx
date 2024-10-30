@@ -6,16 +6,18 @@ import { FormError } from '@/app/(auth)/components/form-error';
 import { FormSuccess } from '@/app/(auth)/components/form-success';
 import { ResetSchema } from '@/schemas';
 import { useForm } from 'react-hook-form';
-import { reset } from '../action/reset';
+import { resetPassword } from '@/app/(auth)/reset/action/reset';
+import { useRouter } from 'next/navigation';
 
 const ResetForm = () => {
   const [error, setError] = useState<string | undefined>('');
   const [success, setSuccess] = useState<string | undefined>('');
-
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<z.infer<typeof ResetSchema>>({
@@ -30,9 +32,16 @@ const ResetForm = () => {
     setSuccess('');
 
     startTransition(() => {
-      reset(values).then(data => {
-        setSuccess(data?.success);
-        setError(data?.error);
+      resetPassword(values).then(data => {
+        if (data.error) {
+          setError(data?.error);
+        } else {
+          setSuccess(data?.success);
+          setTimeout(() => {
+            router.push(`/login`);
+            reset();
+          }, 1500);
+        }
       });
     });
   };

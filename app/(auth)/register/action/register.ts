@@ -8,7 +8,7 @@ import { getUserByEmail } from "@/app/(auth)/lib/user";
 import { sendVerificationEmail } from "@/app/(auth)/lib/mail";
 import { generateVerificationToken } from "@/app/(auth)/lib/token";
 
-export const register = async (values: z.infer<typeof RegisterSchema>) => {
+export const registerUser = async (values: z.infer<typeof RegisterSchema>) => {
   const validateFields = RegisterSchema.safeParse(values);
 
   if (!validateFields.success) return { error: 'Error en los datos ingresados!' };
