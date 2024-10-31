@@ -1,9 +1,8 @@
 'use client'
 import Link from 'next/link';
-import { menuItems } from '@/lib/constants';
-import { MdLogout } from 'react-icons/md';
+import { menuItems } from '@/lib/constants'; 
 import { role } from '@/lib/data';
-import { logout } from '@/app/(auth)/logout/action/logout';
+
 const Menu = () => {
   return (
     <div className="mt-4 text-sm lg:pl-2 xl:pl-4">
@@ -28,15 +27,6 @@ const Menu = () => {
           })}
         </div>
       ))}
-      <button
-        onClick={() => {
-          logout();
-        }}
-        className="flex items-center justify-center lg:px-4 xl:px-4 lg:justify-start text-text/80 dark:text-textDark/80 gap-4 rounded-md  py-2 transition-all duration-300 hover:bg-primary-light hover:text-textDark dark:hover:bg-primary-dark dark:hover:text-text hover:scale-105"
-      >
-        <MdLogout />
-        Logout
-      </button>
     </div>
   );
 };

@@ -3,9 +3,7 @@ import {
   MdGroups,
   MdEvent,
   MdCoPresent,
-  MdFamilyRestroom,
-  MdSettings,
-  MdPerson,
+  MdFamilyRestroom, 
   MdAppRegistration,
   MdAnalytics,
   MdAssignmentTurnedIn,
@@ -106,22 +104,5 @@ export const menuItems = [
         visible: ['admin', 'teacher', 'student', 'parent'],
       },
     ],
-  },
-  {
-    title: 'OTHER',
-    items: [
-      {
-        icon: MdPerson,
-        label: 'Profile',
-        href: '/profile',
-        visible: ['admin', 'teacher', 'student', 'parent'],
-      },
-      {
-        icon: MdSettings,
-        label: 'Settings',
-        href: '/settings',
-        visible: ['admin', 'teacher', 'student', 'parent'],
-      },
-    ],
-  },
+  }
 ];
