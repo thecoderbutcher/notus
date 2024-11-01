@@ -2,7 +2,7 @@
 import { Session } from 'next-auth';
 import { getSession } from 'next-auth/react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import MiniButton from './MiniButton';
 import { MdSettings, MdPerson } from 'react-icons/md';
@@ -33,6 +33,22 @@ const Navbar = () => {
   const openMenu = () => {
     setMenuisOpen(!menuIsOpen);
   };
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setMenuisOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const userInfo = async () => {
@@ -73,7 +89,7 @@ const Navbar = () => {
         </MiniButton>
 
         <div
-          className="flex justify-center items-center cursor-pointer hover:bg-baseBackground hover:shadow-lg p-1 rounded-md"
+          className="flex justify-center items-center cursor-pointer hover:bg-baseBackground dark:hover:bg-baseBackgroundDark hover:shadow-lg p-2 rounded-md"
           onClick={openMenu}
         >
           <div className="flex flex-col px-4">
@@ -93,7 +109,7 @@ const Navbar = () => {
           />
         </div>
         {menuIsOpen && (
-          <div className="absolute top-10 bg-baseBackground dark:bg-baseBackgroundDark text-text/80 dark:text-textDark/80  px-2 py-4 rounded-lg shadow-lg">
+          <div ref={dropdownRef} className="absolute top-10 bg-baseBackground dark:bg-baseBackgroundDark text-text/80 dark:text-textDark/80  px-2 py-4 rounded-lg shadow-lg">
             <div className="flex flex-col gap-1">
               {desplegableMenuLink.map(item => (
                 <Link
