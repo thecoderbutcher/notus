@@ -11,27 +11,27 @@ export default {
       colors: {
         primary:{
           DEFAULT: '#7380ec',
-          dart: '#4b5ac1',
+          dark: '#4b5ac1',
         },
         danger:{
           DEFAULT: '#ff7782',
-          dart: '#d65c66',
+          dark: '#d65c66',
         },
         success:{
           DEFAULT: '#41f1b6',
-          dart: '#2ca380',
+          dark: '#2ca380',
         },
         warning:{
           DEFAULT: '#ffbb55',
-          dart: '#d98a30',
+          dark: '#d98a30',
         },
         info:{
           DEFAULT: '#dce1eb',
-          dart: '#7d8da1',
+          dark: '#7d8da1',
         },
         background:{
           DEFAULT: '#f6f6f9',
-          dart: '#181a1e',
+          dark: '#181a1e',
         },
         content:{
           DEFAULT: '#363949',
