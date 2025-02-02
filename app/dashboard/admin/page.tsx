@@ -1,16 +1,32 @@
+import CountChart from "./(components)/CountChart"
 import UserCard from "./(components)/UserCard"
 
 const AdminPage = () => {
   return (
     <div className="flex flex-col md:flex-row gap-4 p-4">
       {/* Left content*/}
-      <div className="w-full lg:w-2/3">
+      <div className="flex flex-col gap-8 w-full lg:w-2/3 ">
         {/* User stats */}
-        <div className="flex justify-between gap-4">
+        <div className="flex flex-wrap justify-between gap-4">
           <UserCard type="students"/>
           <UserCard type="teachers"/>
           <UserCard type="parents"/>
           <UserCard type="staff"/>
+        </div>
+        {/*Middle chart */}
+        <div className="flex flex-col gap-4 lg:flex-row">
+          {/*Count chart */}
+          <div className="w-full lg:w-1/3 h-[450px]">
+            <CountChart />
+          </div>
+          {/*Attendance chart */}
+          <div className="w-full lg:w-2/3 h-[450px]">
+
+          </div>
+        </div>
+        {/*Bottom chart */}
+        <div>
+
         </div>
       </div>
 
