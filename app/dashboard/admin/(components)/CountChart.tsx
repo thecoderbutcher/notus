@@ -1,6 +1,6 @@
 'use client' 
 import { MdMoreHoriz } from "react-icons/md";
-import { Legend, RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
+import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
 
 const CountChart = () => {
 
@@ -43,12 +43,12 @@ const data = [
         </div>
         {/* Bottom */}
         <div  className="flex justify-center gap-16">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 items-center">
             <div className="w-5 h-5 bg-primary/70 rounded-full" />
             <p className="font-bold">1243</p>
             <p className="text-xs text-info-dark">Boys (54%)</p> 
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 items-center">
             <div className="w-5 h-5 bg-danger/70 rounded-full" />
             <p className="font-bold">1433</p>
             <p className="text-xs text-info-dark">Girls (45%)</p> 
