@@ -26,7 +26,7 @@ const data = [
     <div className="bg-white shadow-lg shadow-shadow rounded-xl w-full h-full p-4">
         {/* Title */}
         <div className="flex justify-between items-center">
-          <h1>Students</h1>
+          <h1 className='text-lg font-semibold'>Students</h1>
           <MdMoreHoriz/>
         </div>
         {/* Chart */}
