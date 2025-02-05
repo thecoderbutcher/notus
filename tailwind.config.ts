@@ -44,7 +44,18 @@ export default {
         shadow: {
           DEFAULT: 'rgba(132, 139, 200, 0.18)',
           dark: 'rgba(0, 0, 0, 0.4)',
-
+        },
+        stats: {
+          pastel_pink:'#FFB3BA',
+          light_peach:'#FFDFBA',
+          soft_yellow:'#FFFFBA',
+          mint_green:'#BAFFC9',
+          pastel_blue:'#BAE1FF',
+          light_lavender:'#E6E6FA',
+          baby_pink:'#FADADD',
+          soft_lilac:'#D5AAFF',
+          pastel_green:'#C8E6C9',
+          light_mauve:'#F5E1FD',
         }
       },
     },

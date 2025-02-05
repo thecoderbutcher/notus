@@ -13,12 +13,12 @@ const data = [
     {
       name: 'Boys',
       count: 50,
-      fill: 'rgba(115, 128, 236, 0.7)',
+      fill: '#BAE1FF',
     },
     {
       name: 'Girl',
       count: 50,
-      fill: 'rgba(255, 119, 130, 0.7)',
+      fill: '#FFB3BA',
     },
   ];
    
@@ -44,12 +44,12 @@ const data = [
         {/* Bottom */}
         <div  className="flex justify-center gap-16">
           <div className="flex flex-col gap-1 items-center">
-            <div className="w-5 h-5 bg-primary/70 rounded-full" />
+            <div className="w-5 h-5 bg-stats-pastel_blue rounded-full" />
             <p className="font-bold">1243</p>
             <p className="text-xs text-info-dark">Boys (54%)</p> 
           </div>
           <div className="flex flex-col gap-1 items-center">
-            <div className="w-5 h-5 bg-danger/70 rounded-full" />
+            <div className="w-5 h-5 bg-stats-pastel_pink rounded-full" />
             <p className="font-bold">1433</p>
             <p className="text-xs text-info-dark">Girls (45%)</p> 
           </div>

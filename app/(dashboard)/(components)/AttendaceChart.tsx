@@ -32,7 +32,7 @@ const data = [
 ];
 const AttendaceChart = () => {
     return (
-        <div className='bg-white shadow-lg shadow-shadow rounded-xl w-full h-full p-4'>
+        <div className='bg-white shadow-lg shadow-shadow rounded-xl w-full h-full p-4 cursor-pointer'>
             {/* Top */}
             <div className="flex justify-between items-center">
                 <h1 className='text-lg font-semibold'>Attendaces</h1>
@@ -78,7 +78,7 @@ const AttendaceChart = () => {
                     />
                     <Bar 
                         dataKey="absent" 
-                        fill="#d65c66" 
+                        fill="#ff7782" 
                         legendType='circle'
                         radius={[5,5,0,0]}
                     />

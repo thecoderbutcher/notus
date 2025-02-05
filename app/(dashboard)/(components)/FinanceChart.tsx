@@ -104,14 +104,14 @@ const FinanceChart = () => {
             <Line 
                 type="monotone" 
                 dataKey="income" 
-                stroke="#8884d8" 
+                stroke="#2ca380" 
                 activeDot={{ r: 8 }} 
                 strokeWidth={2}
             />
             <Line 
                 type="monotone" 
                 dataKey="expence" 
-                stroke="#82ca9d" 
+                stroke="#ff7782" 
                 strokeWidth={2}
             />
             </LineChart>
