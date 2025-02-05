@@ -7,18 +7,109 @@ body {
   
 }
 
- .react-calendar{
+/* Calendar style*/
+.react-calendar{
   width: 100% !important;
   border: none !important;
   font-family: "Inter", sans-serif, !important;
- }
+}
 
- .react-calendar__navigation__label__labelText{
+.react-calendar__navigation__label__labelText{
   font-weight: 600;
- }
+}
 
- .react-calendar__tile--active{
+.react-calendar__tile--active{
   background-color: #c3ebfa !important;
   border-radius: 10%;
   color:black !important
- }
+}
+
+ /*Big Calendar style*/
+.rbc-toolbar-label{ 
+  padding-right: 10px !important;
+}
+
+.rbc-btn-group:first-child{
+  display: none !important;
+}
+
+.rbc-btn-group:last-child{
+  font-size: 14px !important;
+}
+
+.rbc-btn-group:last-child button{
+  border: none !important;
+  background-color: #c3ebfa !important;
+  margin-left: 2px !important;
+}
+
+.rbc-toolbar button.rbc-active{
+  background-color: aqua !important;
+  box-shadow: none !important;
+}
+
+.rbc-time-view{
+  border-color: #eee !important;
+}
+
+.rbc-time-header{
+  display: none !important;
+}
+
+.rbc-time-content{
+  border: none !important;
+}
+
+.rbc-time-gutter.rbc-time-column{
+  font-size: 12px !important;
+}
+
+.rbc-time-gutter.rbc-time-column .rbc-timeslot-group{
+  padding: 0px 20px !important;
+}
+
+.rbc-timeslot-group{
+  background-color: #c9f1ff !important;
+}
+
+.rbc-day-slot{
+  font-size: 14px !important;
+}
+
+.rbc-event{
+  border: none !important;
+  color: #363949 !important;
+  padding: 10px;
+  margin: 10px;
+  width: 99%;
+}
+
+.rbc-event:nth-child(1){
+  background-color: #7380ec;
+}
+.rbc-event:nth-child(2){
+  background-color: #ff7782;
+}
+.rbc-event:nth-child(3){
+  background-color: #41f1b6;
+}
+.rbc-event:nth-child(4){
+  background-color: #ffbb55;
+}
+.rbc-event:nth-child(5){
+  background-color: #dce1eb;
+}
+.rbc-event:nth-child(6){
+  background-color: #f6f6f9;
+}
+.rbc-event:nth-child(7){
+  background-color: #7380ec;
+}
+.rbc-event:nth-child(8){
+  background-color: #7380ec;
+}
+
+.rbc-event-label{
+  color: gray !important;
+  margin-bottom: 5px;
+}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { MdSearch, MdForum, MdNotifications } from "react-icons/md";
 const Navbar = () => {
-
     return (
         <div className="flex items-center justify-between p-4  ">
             {/* searc bar */}
