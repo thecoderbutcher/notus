@@ -15,7 +15,7 @@ export default function DasboardLayout({ children,}: Readonly<{ children: React.
             <Menu/>
           </div>
           {/* right */}
-          <div className="w-[86%] md:w-[92%] lg:w-[86%] overflow-scroll px-2">
+          <div className="w-[86%] md:w-[92%] lg:w-[86%] overflow-scroll px-2 flex flex-col">
             <Navbar />
             {children}
           </div> 
