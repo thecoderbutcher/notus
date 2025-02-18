@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    container_name: notus-db
+    restart: always
+    environment:
+      POSTGRES_USER: notus-admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: notus
+    ports:
+      - "5433:5432"
+    volumes:
+      - notus-data:/var/lib/postgresql/data
+
+volumes:
+  notus-data:
