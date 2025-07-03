@@ -1,0 +1,19 @@
+# APP DETAILS
+APP_NAME=""
+
+# AUTHJS
+AUTH_SECRET="" # Added by `npx auth`. Read more: https://cli.authjs.dev
+
+# DATABASE
+DB_USER=""
+DB_PASSWORD=""
+DATABASE_URL=""
+DIRECT_URL=""
+
+# GOOGLE
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+
+SMTP_EMAIL=
+SMTP_PASSWORD=
+

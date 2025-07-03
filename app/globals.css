@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1976d2;
+  --color-primary-light: #2196f3;
+  --color-primary-soft: #bbdefb;
+  --color-primary-dark: #2196f3;
+
+  --color-neutralLight: #bdbdbd;
+  --color-neutralDarkest: #212121;
+  --color-neutralDark: #757575;
+
+  --color-baseBackground: #ffffff;
+  --color-baseSurface: #f5f5f5;
+  --color-baseBackgroundDark: #212121;
+  --color-baseSurfaceDark: #424242;
+
+  --color-text: #212121;
+  --color-textMuted: #757575;
+  --color-textDark: #ffffff;
+  --color-textMutedDark: #bdbdbd;
+
+  --color-accent: #536dfe;
+  --color-border: #757575;
+
+  --color-success: #10b981;
+  --color-warning: #ffbb55;
+  --color-danger: #ef4444;
+}
+
+body {
+  @apply bg-baseSurface text-text dark:bg-baseBackgroundDark dark:text-textDark;
+}
+
+input {
+  @apply w-full border border-border h-10 px-4 rounded-md text-sm focus:border-border outline-none focus:outline-none border-none;
+}
+
+/* Chrome, Safari, Edge */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+button {
+  @apply cursor-pointer;
+}
